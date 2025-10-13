@@ -1,53 +1,50 @@
 // buscar.js
-
 const root = document.getElementById('root');
 
 function cargarBuscar() {
   // Limpiar contenido
   root.innerHTML = '';
+  root.classList.remove('inicio'); // <--- importante
 
-  // Crear título y input
+  // Crear título
   const titulo = document.createElement('h2');
   titulo.textContent = 'Buscar Anime';
   root.appendChild(titulo);
 
+  // Crear input
   const input = document.createElement('input');
   input.type = 'text';
   input.placeholder = 'Escribe el nombre del anime...';
-  input.style.padding = '0.5rem';
-  input.style.width = '300px';
-  input.style.marginBottom = '1rem';
+  input.classList.add('search-input');
   root.appendChild(input);
 
+  // Crear mensaje inicial
   const mensaje = document.createElement('p');
   mensaje.textContent = 'Empieza a escribir para buscar';
-  mensaje.style.color = '#005580'; // color estilo principal
   root.appendChild(mensaje);
 
+  // Crear grid
   const grid = document.createElement('div');
   grid.classList.add('grid');
   root.appendChild(grid);
 
-  // Escuchar cambios en el input
+  // Escuchar input
   let timeout;
   input.addEventListener('input', () => {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
       const query = input.value.trim();
+      grid.innerHTML = '';
       if (!query) {
         mensaje.textContent = 'Empieza a escribir para buscar';
-        grid.innerHTML = '';
         return;
       }
 
-      mensaje.textContent = ''; // limpiar mensaje
+      mensaje.textContent = '';
 
-      // Fetch a la API
       fetch(`https://api.jikan.moe/v4/anime?q=${encodeURIComponent(query)}`)
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
-          grid.innerHTML = ''; // limpiar grid
-
           if (!data.data || data.data.length === 0) {
             mensaje.textContent = 'No se encontraron resultados';
             return;
@@ -78,6 +75,6 @@ function cargarBuscar() {
           console.error(err);
           mensaje.textContent = 'Ocurrió un error al buscar.';
         });
-    }, 500); // delay para no spamear la API
+    }, 500);
   });
 }
