@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimeApp</title>
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    
+  <header>
+    <h1>AnimeApp</h1> <!-- Se recupera el titulo -->
+    <nav>
+      <button onclick="cargarTopAnime()">Top Anime</button>
+      <button onclick="cargarProximos()">Próximos</button>
+      <button onclick="cargarTemporadas()">Temporadas</button>
+      <button onclick="cargarBuscar()">Buscar</button>
+      <button onclick="cargarAcerca()">Acerca</button>
+    </nav>
+  </header>
+
+  <main id="root" class="inicio">
+    <h2>Bienvenido a AnimeApp</h2>
+    <p>Explora los mejores animes, descubre los próximos estrenos y mucho más</p>
+  </main>
+      <script src="JS/topAnimes.js"></script>
+      <script src="JS/proximos.js"></script>
+      <script src="JS/temporadas.js"></script>
+      <script src="JS/buscar.js"></script>
+      <script src="JS/acerca.js"></script>
 </body>
+
+<script>
+  const buttons = document.querySelectorAll("nav button");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // Quitar la clase "active" de todos
+      buttons.forEach(b => b.classList.remove("active"));
+      // Agregarla solo al botón que se clico
+      btn.classList.add("active");
+    });
+  });
+</script>
 </html>

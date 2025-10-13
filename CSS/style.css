@@ -1,0 +1,147 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #B3F6FF; /* Fondo principal */
+  color: #003366; /* Texto oscuro para contraste */
+}
+
+header {
+  background-color: #E0F9FF; /* Matiz un poco más oscuro que el fondo */
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  color: #005580; /* Color principal más intenso para títulos */
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav button {
+  background: none;
+  border: 1px solid #005580; /* borde oscuro para contraste */
+  color: #005580;
+  margin: 0 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+nav button:hover,
+nav button.active {
+  background-color: #005580; /* botón activo en azul intenso */
+  color: #E0F9FF; /* texto blanco al activarse */
+}
+
+/* === CONTENEDOR PRINCIPAL === */
+main {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* === TÍTULOS === */
+main h2 {
+  text-align: center;
+  color: #0073A6; /* azul medio */
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+/* === GRID DE TARJETAS === */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: start;
+
+  max-width: 1200px; /* limita el ancho total del grid */
+  margin: 0 auto;    /* centra el grid */
+}
+
+/* === TARJETAS === */
+.card {
+  background: #E0F9FF; /* celeste muy suave para las tarjetas */
+  color: #003366; /* texto oscuro */
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+  width: 100%;
+  max-width: 250px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* === IMÁGENES === */
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-bottom: 2px solid #0073A6; /* borde azul */
+}
+
+/* === TEXTOS === */
+.card h3 {
+  margin: 0.5rem 0 0;
+  color: #005580; /* títulos de las tarjetas */
+  font-size: 1rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #004466; /* texto secundario */
+  margin-bottom: 0.5rem;
+}
+
+/* === PANTALLA DE INICIO === */
+.inicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 70vh;
+}
+
+.inicio h2 {
+  color: #005580;
+  margin-bottom: 0.5rem;
+}
+
+.inicio p {
+  color: #004466;
+  font-size: 1.1rem;
+}
+
+/* === BARRA DE BÚSQUEDA === */
+input[type="text"] {
+  padding: 0.6rem 1rem;
+  width: 300px;
+  border: 2px solid #0073A6; /* borde azul medio */
+  border-radius: 25px; /* más redondeado */
+  outline: none;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  background-color: #E0F9FF; /* fondo de la barra */
+  color: #003366; /* texto oscuro */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+input[type="text"]::placeholder {
+  color: #005580; /* placeholder en azul más intenso */
+  opacity: 0.7;
+}
+
+input[type="text"]:focus {
+  border-color: #005580; /* azul intenso al enfocar */
+  box-shadow: 0 0 10px rgba(0, 115, 166, 0.3); /* efecto glow */
+  background-color: #FFFFFF; /* fondo blanco al enfocar */
+}
