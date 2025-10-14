@@ -74,10 +74,12 @@ main h2 {
   transition: transform 0.2s;
   width: 100%;
   max-width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
 }
 
 /* === IMÁGENES === */

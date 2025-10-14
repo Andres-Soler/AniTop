@@ -1,10 +1,14 @@
 // buscar.js
-const root = document.getElementById('root');
 
 function cargarBuscar() {
-  // Limpiar contenido
+  const root = document.getElementById('root');
   root.innerHTML = '';
-  root.classList.remove('inicio'); // <--- importante
+  root.classList.remove('inicio'); // importante para que el grid funcione bien
+
+  // Contenedor para input
+  const searchContainer = document.createElement('div');
+  searchContainer.style.marginBottom = '1rem';
+  root.appendChild(searchContainer);
 
   // Crear título
   const titulo = document.createElement('h2');
@@ -16,9 +20,9 @@ function cargarBuscar() {
   input.type = 'text';
   input.placeholder = 'Escribe el nombre del anime...';
   input.classList.add('search-input');
-  root.appendChild(input);
+  searchContainer.appendChild(input);
 
-  // Crear mensaje inicial
+  // Mensaje inicial
   const mensaje = document.createElement('p');
   mensaje.textContent = 'Empieza a escribir para buscar';
   root.appendChild(mensaje);
