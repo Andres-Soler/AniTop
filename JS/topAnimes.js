@@ -1,6 +1,8 @@
+// topAnimes.js
+
 async function cargarTopAnime() {
   const root = document.getElementById("root");
-  root.className = ""; // quitamos la clase 'inicio' si está
+  root.className = ""; // Remueve la clase inicio
   root.innerHTML = "<h2>Cargando los mejores animes...</h2>";
 
   try {

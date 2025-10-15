@@ -4,7 +4,7 @@ const root = document.getElementById('root');
 function cargarProximos() {
   // Limpiar contenido
   root.innerHTML = '';
-  root.classList.remove('inicio'); // quitar la clase flex de inicio
+  root.classList.remove('inicio');
 
   // Título
   const titulo = document.createElement('h2');
