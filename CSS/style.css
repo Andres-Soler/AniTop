@@ -260,3 +260,94 @@ h2, p, button {
 p {
   font-size: 1.1rem;
 }
+
+/* Evita que el texto principal suba demasiado */
+main {
+  padding-top: 5rem; /* empuja el contenido hacia abajo */
+}
+
+/* Aumenta el espacio entre los botones del menú */
+nav button {
+  margin: 0 10px;
+  padding: 0.6rem 1.2rem;
+}
+
+/* Header fijo y con sombra sutil */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #E0F9FF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste para que el contenido no quede escondido debajo del header */
+body {
+  margin-top: 0;
+  padding-top: 3rem;
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Si la pantalla es menor a 768px (celulares y tablets pequeñas) */
+@media (max-width: 768px) {
+  header {
+    padding: 0.5rem;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap; /* permite que los botones bajen a otra línea */
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  nav button {
+    flex: 1 1 40%; /* se acomodan en dos columnas */
+    margin: 5px 0;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: 1rem;
+    padding-top: 6rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* tarjetas más compactas */
+    gap: 1rem;
+  }
+
+  .card img {
+    height: 220px; /* reduce la altura de las imágenes */
+  }
+
+  .acerca-container {
+    padding: 1rem;
+  }
+
+  .acerca-logo {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* Para pantallas ultra pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+  nav button {
+    flex: 1 1 100%; /* los botones se apilan en una columna */
+  }
+
+  main h2 {
+    font-size: 1.4rem;
+  }
+
+  main p {
+    font-size: 1rem;
+  }
+}
